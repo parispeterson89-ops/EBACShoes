@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBAC Shoes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./Js/main.js">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./Js/main.js">
+    <!-- jQuery Validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <!-- Lightswind CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightswind@1.0.1/src/lightswind.css">
+    <!-- Add this script CDN link at the bottom of the body, after all the HTML content, and before any other script tags -->
+    <script src="https://cdn.jsdelivr.net/npm/lightswind@1.0.1/src/lightswind.min.js"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="http://fonts.googleapis.com">
+    <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-stretch: auto;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: blue;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-style: italic;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-banner {
+				width: 100%;
+                background-position: center;
+                background-size: cover;
+				height: 100%;
+				display: flex;
+                gap: 20px;
+                padding: 20px;
+                box-sizing: border-box;
+        }
+
+        .header-content img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            flex-wrap: wrap;
+        }
+
+        .header-title {
+			position: absolute;
+            bottom: 30px;
+            text-align: center;
+		    left: 50%;
+			transform: translateX(-50%);
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            align-items: center;
+			justify-content: center;
+        }
+
+        nav {
+            background-color: blue;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+			z-index: 1;
+        }
+
+		nav .container {
+			display: flex;
+			justify-content: inherit;
+			gap: 30px;
+		}
+
+        nav a {
+            font-size: 1.1em;
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-style: italic;
+        }
+
+		nav a:hover {
+			color: #869cb3;
+		}
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .sobre {
+            margin: 50px 0;
+            line-height: 1.7;
+        }
+
+        .sobre-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre-imagem {
+            flex: 1;
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sobre-texto {
+            flex: 1;
+        }
+
+        .sobre h2,
+		#produtos h2 {
+			font-size: 2em;
+			margin-bottom: 30px;
+            color: #0056b3;
+			border-bottom: 3px solid #0056b3;
+			padding-bottom: 10px;
+		}
+
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .produto-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            transition: translateY(-5px);
+        }
+
+        .produto-card img {
+            width: 100%;
+            justify-content: center;
+            max-width: 200px;
+            padding: auto;
+            height: auto;
+            align-items: center;
+            justify-items: center;
+            margin-bottom: 15px;
+        }
+
+        .produto-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .produto-card p {
+            margin-bottom: 15px;
+        }
+
+        .produto-card button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .produto-card button:hover {
+            background-color: blue;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        .btn-carrinho {
+            background-color: #52c2e1;
+            padding: 12px 25px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-carrinho:hover {
+            background-color: #3aa8c7;
+        }
+
+        @media (max-width: 768px) {
+            .produtos-grid {
+                grid-template-columns: 1fr;
+            }
+            .sobre-content {
+                flex-direction: column;
+            }
+            .sobre-imagem {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            .sobre-texto h2 {
+                text-align: center;
+            }
+            .header-banner{
+				width: 100%;
+                background-position: center;
+				background-size: cover;
+                display: flex;
+                gap: 20px;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .header-content img{
+                max-width: 100%;
+				height: auto;
+                display: block;
+            }
+			.header-title {
+				bottom: 10px;
+			}
+			.header-title h1 {
+				font-size: 1.5em;
+			}
+			nav .container {
+				flex-direction: column;
+				text-align: center;
+				gap: 15px;
+			}
+            .container-sobre {
+                flex-direction: column;
+                text-align: center;
+            }
+            .texto-sobre h2 {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .produtos-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-banner{
+                height: 250px;
+            }
+
+            nav .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+		<header class="header-banner">
+        <h1>EBAC Shoes</h1>
+        <nav class="container">
+            <div>
+                <a href="#sobre a loja">Sobre a loja</a>
+                <a href="#produtos">Produtos</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="sobre" class="sobre">
+            <div class="sobre-content">
+                <img src="hq720.jpg" alt="Notre boutique EBAC Shoes👟✨" class="sobre-imagem">
+                <div class="sobre-texto">
+            <h2>Sobre a loja</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum labore repudiandae, aliquam laudantium ipsum quasi mentore, possimus aperiam expedita qui quidem voluptates quae, vitae magni tempora eveniet itaque natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum labore repudiandae, aliquam laudantium ipsum quasi mentore, possimus aperiam expedita qui quidem voluptates quae, vitae magni tempora eveniet itaque natus?
+            </p>
+            </div>
+        </div>
+        </section>
+
+        <section id="produtos">
+            <h2>Produtos</h2>
+            <div class="produtos">
+                <!-- Produto Nike -->
+                <article class="produto-card">
+                    <img src="./image/nike.png" alt="Tênis Nike">
+                    <h3><b>Tênis Nike Modelo XPTO</b></h3>
+                    <p>Tênis preto, disponível nos tamanhos: 37, 38, 39, 40 e 42</p>
+                    <button class="btn-carrinho">Adicionar ao carrinho</button>
+                </article>
+
+                <!-- Produto Adidas -->
+                <article class="produto-card">
+                    <img src="./image/adidas.png" alt="Tênis Adidas">
+                    <h3><b>Tênis Adidas Modelo XPTO</b></h3>
+                    <p>Tênis preto, disponível nos tamanhos: 37, 38, 39, 40 e 42</p>
+                    <button class="btn-carrinho">Adicionar ao carrinho</button>
+                </article>
+
+                <!-- Produto Vans -->
+                <article class="produto-card">
+                    <img src="./image/vans.png" alt="Tênis Vans">
+                    <h3><b>Tênis Vans Modelo XPTO</b></h3>
+                    <p>Tênis preto, disponível nos tamanhos: 37, 38, 39, 40 e 42</p>
+                    <button class="btn-carrinho">Adicionar ao carrinho</button>
+                </article>
+
+                <!-- Produto Small Vans -->
+                <article class="produto-card">
+                    <img src="./image/vanskid.png" alt="Tênis Infantil">
+                    <h3><b>Tênis Vans Infantil</b></h3>
+                    <p>Tênis preto, disponível nos tamanhos: 27, 28 e 29 <br>
+                        confortavel e macio, com tecnologia... </p>
+                    <button class="btn-carrinho">Adicionar ao carrinho</button>
+                </article>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Fonctionnalité Cesta
+        document.querySelectorAll('.btn-carrinho').forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.closest('.produto-card');
+                const productName = product.querySelector('h3').textContent;
+
+                // Animation ADD
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+
+                // Notification ADD
+                const notification = document.createElement('div');
+                notification.textContent = `${productName} adicionado!`;
+                notification.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: #34CD12FF;
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 5px;
+                    animation: slideIn 0.3s ease-out;
+                `;
+
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.remove();
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
